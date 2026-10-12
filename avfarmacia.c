@@ -70,7 +70,30 @@ int main() {
                 }
             }
           }
+        else if (opcao == 3) {
+            int id_busca;
+            int encontrou = 0;
+
+            printf("\nDigite o ID que deseja pesquisar: ");
+            scanf("%d", &id_busca);
+
+            for (int i = 0; i < total; i++) {
+                if (codigo_produto[i] == id_busca) {
+                    printf("\nProduto encontrado!\n");
+                    printf("ID: %d | Medicamento: %s | Nota: %.2f\n",
+                           codigo_produto[i],
+                           nome_produto[i],
+                           nota_eficacia[i]);
+                    encontrou = 1;
+                    break;
+                }
+            }
+
+            if (!encontrou) {
+                printf("\nProduto nao encontrado.\n");
+            }
         }
+
 
 
  return 0;
