@@ -56,6 +56,20 @@ int main() {
                 scanf("%d", &continuar);
             }
           }
+                  else if (opcao == 2) {
+            printf("\n--- PRODUTOS REGISTRADOS ---\n");
+
+            if (total == 0) {
+                printf("Nenhum produto cadastrado.\n");
+            } else {
+                for (int i = 0; i < total; i++) {
+                    printf("ID: %d | Nome: %s | Nota: %.2f\n",
+                           codigo_produto[i],
+                           nome_produto[i],
+                           nota_eficacia[i]);
+                }
+            }
+          }
         }
 
 
