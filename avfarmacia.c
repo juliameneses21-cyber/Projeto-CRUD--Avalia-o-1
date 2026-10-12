@@ -93,6 +93,62 @@ int main() {
                 printf("\nProduto nao encontrado.\n");
             }
         }
+      else if (opcao == 4) {
+            int id_busca;
+            int encontrou = 0;
+
+            printf("\nDigite o ID do produto que deseja modificar: ");
+            scanf("%d", &id_busca);
+
+            for (int i = 0; i < total; i++) {
+                if (codigo_produto[i] == id_busca) {
+                    float nova_nota;
+
+                    printf("\nProduto encontrado: %s\n", nome_produto[i]);
+                    printf("Digite a nova nota de eficacia (1.0 a 5.0): ");
+                    scanf("%f", &nova_nota);
+
+                    if (nova_nota >= 1.0f && nova_nota <= 5.0f) {
+                        nota_eficacia[i] = nova_nota;
+                        printf("Nota modificada com sucesso!\n");
+                    } else {
+                        printf("Nota invalida! Alteracao cancelada.\n");
+                    }
+
+                    encontrou = 1;
+                    break;
+                }
+            }
+
+            if (!encontrou) {
+                printf("\nProduto nao encontrado.\n");
+            }
+        }
+        else if (opcao == 5) {
+            int id_busca;
+            int encontrou = 0;
+
+            printf("\nDigite o ID do produto que deseja deletar: ");
+            scanf("%d", &id_busca);
+
+            for (int i = 0; i < total; i++) {
+                if (codigo_produto[i] == id_busca) {
+                    for (int j = i; j < total - 1; j++) {
+                        codigo_produto[j] = codigo_produto[j + 1];
+                        nota_eficacia[j] = nota_eficacia[j + 1];
+                        strcpy(nome_produto[j], nome_produto[j + 1]);
+                    }
+                    total--;
+                    printf("\nProduto deletado com sucesso!\n");
+                    encontrou = 1;
+                    break;
+                }
+            }
+
+            if (!encontrou) {
+                printf("\nProduto nao encontrado.\n");
+            }
+        }
 
 
 
