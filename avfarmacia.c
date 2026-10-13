@@ -150,6 +150,16 @@ int main() {
             }
         }
 
+      else if (opcao == 6) {
+            printf("\nSistema de avaliacao encerrado.\n");
+            break;
+        }
+        else {
+            printf("\nOpcao invalida! Escolha um numero de 1 a 6.\n");
+        }
+    }
+
+
 
 
  return 0;
